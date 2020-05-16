@@ -1,3 +1,16 @@
+´´´
+npm install -D eslint
+npx eslint --init 
+
+documentation
+npm i adonis-swagger
+
+adonis install @adonisjs/validator
+adonis install adonis-bumblebee
+
+adonis install @adonisjs/mail
+´´´
+
 # Adonis API application
 
 This is the boilerplate for creating an API server in AdonisJs, it comes pre-configured with.
