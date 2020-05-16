@@ -11,6 +11,13 @@ adonis install adonis-bumblebee
 adonis install @adonisjs/mail
 ´´´
 
+# Erros Logs Reports
+adonis make:ehandler 
+
+# Sentry
+npm install raven 
+yarn add @sentry/node@5.15.5
+
 # Adonis API application
 
 This is the boilerplate for creating an API server in AdonisJs, it comes pre-configured with.

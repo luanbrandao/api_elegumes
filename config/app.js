@@ -82,7 +82,6 @@ module.exports = {
     */
     jsonpCallback: 'callback',
 
-
     /*
     |--------------------------------------------------------------------------
     | Etag
@@ -188,8 +187,8 @@ module.exports = {
     | Available drivers are: `file` and `console`.
     |
     */
+    // transport: 'console',
     transport: 'console',
-
     /*
     |--------------------------------------------------------------------------
     | Console Transport
@@ -218,8 +217,8 @@ module.exports = {
     */
     file: {
       driver: 'file',
-      name: 'adonis-app',
-      filename: 'adonis.log',
+      name: 'adonis-elegumes',
+      filename: 'adonis-elegumes-error.log',
       level: 'info'
     }
   },
