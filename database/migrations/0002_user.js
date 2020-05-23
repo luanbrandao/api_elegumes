@@ -14,13 +14,11 @@ class UserSchema extends Schema {
       table.string('email', 254).notNullable().unique()
       table.string('phone', 20).notNullable()
       table.string('password', 60).notNullable()
-      // reset password
       table.boolean('active').defaultTo(true)
-      table.string('forgot_password')
-      table.timestamp('forgot_password_created_at')
+      table.dateTime('birth')
+
       table.boolean('confirmation_mail').defaultTo(false)
       table.timestamp('confirmation_mail_created_at')
-      table.dateTime('birth')
       // table.integer('image_id').unsigned()
       // table.foreign('image_id').references('id').inTable('images')
       table
