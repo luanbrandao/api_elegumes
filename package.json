@@ -5,6 +5,7 @@
   "description": "Adonisjs boilerplate for API server with pre-configured JWT",
   "main": "index.js",
   "scripts": {
+    "commit": "npx git-cz",
     "start": "node server.js",
     "debug": "adonis serve --dev --debug",
     "test": "node ace test"
@@ -13,9 +14,11 @@
     "adonisjs",
     "adonis-app"
   ],
-  "husky":{
+  "husky": {
     "hooks": {
-      "commit-msg":"commitlint -E HUSKY_GIT_PARAMS"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+
     }
   },
   "author": "",
@@ -39,6 +42,8 @@
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
+    "commitizen": "^4.1.2",
+    "cz-conventional-changelog": "^3.2.0",
     "eslint": "^7.0.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-plugin-import": "^2.20.2",
@@ -49,5 +54,10 @@
   },
   "autoload": {
     "App": "./app"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
