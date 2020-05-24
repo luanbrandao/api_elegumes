@@ -17,13 +17,6 @@ class ProductsSchema extends Schema {
       table.boolean('active').defaultTo(false)
       table.enu('type', ['amount', 'weight'])
       table
-        .uuid('category_products_id')
-        .unsigned()
-        .references('id')
-        .inTable('category_products')
-        .onUpdate('CASCADE')
-        .onDelete('SET NULL')
-      table
         .uuid('company_id')
         .unsigned()
         .references('id')

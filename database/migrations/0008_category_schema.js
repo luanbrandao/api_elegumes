@@ -6,10 +6,11 @@ const Schema = use('Schema')
 class CategoryProductSchema extends Schema {
   async up () {
     await this.db.raw('CREATE EXTENSION IF NOT EXISTS "uuid-ossp";')
-    this.create('category_products', (table) => {
+    this.create('categories', (table) => {
       table.uuid('id').primary().defaultTo(this.db.raw('uuid_generate_v4()'))
       table.boolean('active').defaultTo(false)
-      table.string('name', 200)
+      table.string('title', 100)
+      table.string('description', 255)
       table
         .uuid('image_id')
         .unsigned()
@@ -22,7 +23,7 @@ class CategoryProductSchema extends Schema {
   }
 
   down () {
-    this.drop('category_products')
+    this.drop('categories')
   }
 }
 

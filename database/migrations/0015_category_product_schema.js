@@ -3,32 +3,29 @@
 /** @type {import('@adonisjs/lucid/src/Schema')} */
 const Schema = use('Schema')
 
-class ImageProductSchema extends Schema {
+class CategoryProductSchema extends Schema {
   async up () {
     await this.db.raw('CREATE EXTENSION IF NOT EXISTS "uuid-ossp";')
-    this.create('image_product', (table) => {
+    this.create('category_product', (table) => {
       table.uuid('id').primary().defaultTo(this.db.raw('uuid_generate_v4()'))
-      table
-        .uuid('product_id')
-        .unsigned()
+
+      table.uuid('product_id').unsigned()
         .references('id')
         .inTable('products')
         .onUpdate('CASCADE')
         .onDelete('SET NULL')
-      table
-        .uuid('image_id')
-        .unsigned()
+
+      table.uuid('category_id').unsigned()
         .references('id')
-        .inTable('images')
+        .inTable('categories')
         .onUpdate('CASCADE')
         .onDelete('SET NULL')
-      table.timestamps()
     })
   }
 
   down () {
-    this.drop('image_product')
+    this.drop('category_product')
   }
 }
 
-module.exports = ImageProductSchema
+module.exports = CategoryProductSchema

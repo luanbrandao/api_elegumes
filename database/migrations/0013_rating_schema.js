@@ -11,20 +11,20 @@ class RatingsSchema extends Schema {
       table.decimal('rate', 12, 2).defaultTo(0.0)
       table.text('comment')
 
-      // table
-      //   .uuid('user_id')
-      //   .unsigned()
-      //   .references('id')
-      //   .inTable('users')
-      //   .onDelete('cascade')
+      table
+        .uuid('user_id')
+        .unsigned()
+        .references('id')
+        .inTable('users')
+        .onDelete('cascade')
 
-      // table
-      //   .uuid('company_id')
-      //   .unsigned()
-      //   .references('id')
-      //   .inTable('companies')
-      //   .onUpdate('CASCADE')
-      //   .onDelete('SET NULL')
+      table
+        .uuid('company_id')
+        .unsigned()
+        .references('id')
+        .inTable('companies')
+        .onUpdate('CASCADE')
+        .onDelete('SET NULL')
 
       table.timestamps()
     })
