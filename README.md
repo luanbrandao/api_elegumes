@@ -48,5 +48,11 @@ adonis migration:run
 ```
 
 ## Test
-``
+```
 adonis install @adonisjs/vow
+```
+## Commits
+```
+npm install @commitlint/cli @commitlint/config-conventional -D
+npm install husky -D 
+```
