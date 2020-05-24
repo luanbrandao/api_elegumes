@@ -20,6 +20,7 @@ const providers = [
   'adonis-swagger/providers/SwaggerProvider',
   // test
   '@adonisjs/vow/providers/VowProvider'
+
 ]
 
 /*
