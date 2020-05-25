@@ -3,7 +3,7 @@
 /** @type {import('@adonisjs/lucid/src/Schema')} */
 const Schema = use('Schema')
 
-class CategoryProductSchema extends Schema {
+class CategorySchema extends Schema {
   async up () {
     await this.db.raw('CREATE EXTENSION IF NOT EXISTS "uuid-ossp";')
     this.create('categories', (table) => {
@@ -27,4 +27,4 @@ class CategoryProductSchema extends Schema {
   }
 }
 
-module.exports = CategoryProductSchema
+module.exports = CategorySchema

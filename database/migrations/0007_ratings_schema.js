@@ -8,13 +8,16 @@ class RatingsSchema extends Schema {
     await this.db.raw('CREATE EXTENSION IF NOT EXISTS "uuid-ossp";')
     this.create('ratings', (table) => {
       table.uuid('id').primary().defaultTo(this.db.raw('uuid_generate_v4()'))
+      table.decimal('rate', 12, 2).defaultTo(0.0)
+      table.text('comment')
+
       table
         .uuid('user_id')
         .unsigned()
         .references('id')
         .inTable('users')
-        .onUpdate('CASCADE')
-        .onDelete('SET NULL')
+        .onDelete('cascade')
+
       table
         .uuid('company_id')
         .unsigned()
@@ -22,9 +25,6 @@ class RatingsSchema extends Schema {
         .inTable('companies')
         .onUpdate('CASCADE')
         .onDelete('SET NULL')
-      table
-        .text('comment')
-      table.decimal('rate', 4, 2)
 
       table.timestamps()
     })
