@@ -14,12 +14,13 @@
 */
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
-const Route = use('Route')
 
-Route.get('/hello', async () => {
-  return { greeting: 'ELegumes' }
-})
+require('./client/auth/register')
 
-Route.get('/', async () => {
-  return { greeting: 'Hello world in JSON' }
-})
+// Route.get('/hello', async () => {
+//   return { greeting: 'ELegumes' }
+// })
+
+// Route.get('/', async () => {
+//   return { greeting: 'Hello world in JSON' }
+// })

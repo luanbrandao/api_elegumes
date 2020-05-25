@@ -9,17 +9,23 @@ const Model = use('Model')
 *      type: object
 *      properties:
 *        id:
-*          type: uint
+*          type: uuid
 *        username:
 *          type: string
 *        email:
 *          type: string
 *        password:
 *          type: string
+*        phone:
+*          type: string
+*        birth:
+*          type: string
+*
 *      required:
 *        - username
 *        - email
 *        - password
+*        - phone
 */
 class User extends Model {
 }

@@ -19,7 +19,11 @@ const providers = [
   '@adonisjs/cors/providers/CorsProvider',
   'adonis-swagger/providers/SwaggerProvider',
   // test
-  '@adonisjs/vow/providers/VowProvider'
+  '@adonisjs/vow/providers/VowProvider',
+  '@adonisjs/validator/providers/ValidatorProvider',
+  'adonis-bumblebee/providers/BumblebeeProvider',
+  '@adonisjs/mail/providers/MailProvider',
+  '@adonisjs/framework/providers/ViewProvider'
 
 ]
 

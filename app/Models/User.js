@@ -38,6 +38,17 @@ class User extends Model {
   image () {
     return this.belongsTo('App/Models/Image')
   }
+
+  // trata antes de salvar e apresetar os dados
+  // formata os valores para o padrão do MYSQL
+  // informa pro adonis os campos do tipo date
+  static get dates () {
+    return ['created_at', 'updated_at', 'birth', 'confirmation_mail_created_at']
+  }
+
+  static get hidden () {
+    return ['password', 'created_at', 'updated_at']
+  }
 }
 
 module.exports = User
