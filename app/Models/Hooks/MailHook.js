@@ -3,12 +3,12 @@
 const Mail = use('Mail')
 const MailHook = exports = module.exports = {}
 
-MailHook.register = async (model) => {
-  const { username, email } = model
+MailHook.register = async (confirmationMail) => {
+  const { email, token, username } = confirmationMail
 
   await Mail.send(
     ['emails.confirmation_mail'],
-    { username, link: 'alegumes@gmail.com/register' },
+    { username, link: `alegumes@gmail.com/register?token=${token}` },
     message => {
       message
         .to(email)

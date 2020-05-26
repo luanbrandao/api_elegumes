@@ -19,7 +19,6 @@ class User extends Model {
         userInstance.password = await Hash.make(userInstance.password)
       }
     })
-    this.addHook('beforeSave', 'MailHook.register')
   }
 
   /**
@@ -38,6 +37,10 @@ class User extends Model {
 
   image () {
     return this.belongsTo('App/Models/Image')
+  }
+
+  confirmationMail () {
+    return this.hasOne('App/Models/ConfirmationMail')
   }
 
   // trata antes de salvar e apresetar os dados

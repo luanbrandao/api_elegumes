@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 
 const crypto = use('crypto')
 
@@ -7,7 +8,7 @@ const crypto = use('crypto')
  */
 
 // eslint-disable-next-line camelcase
-const str_random = async (length = 40) => {
+const strRandom = async (length = 40) => {
   let string = ''
   const len = string.length
 
@@ -26,5 +27,5 @@ const str_random = async (length = 40) => {
 }
 
 module.exports = {
-  str_random
+  strRandom
 }
