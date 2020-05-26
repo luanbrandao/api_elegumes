@@ -15,12 +15,11 @@ class UserSchema extends Schema {
       table.string('phone', 20).notNullable()
       table.string('password', 60).notNullable()
       table.boolean('active').defaultTo(true)
-      table.dateTime('birth')
+      table.date('birth')
 
       table.boolean('confirmation_mail').defaultTo(false)
       table.timestamp('confirmation_mail_created_at')
-      // table.integer('image_id').unsigned()
-      // table.foreign('image_id').references('id').inTable('images')
+
       table
         .uuid('image_id')
         .unsigned()
