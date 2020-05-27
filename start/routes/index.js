@@ -15,6 +15,7 @@
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 
+require('./auth/confirmationMail')
 require('./client/auth/register')
 
 // Route.get('/hello', async () => {

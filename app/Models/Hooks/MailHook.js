@@ -1,5 +1,8 @@
 'use strict'
 
+/** @type {import('@adonisjs/framework/src/Env')} */
+const Env = use('Env')
+
 const Mail = use('Mail')
 const MailHook = exports = module.exports = {}
 
@@ -8,7 +11,7 @@ MailHook.register = async (confirmationMail) => {
 
   await Mail.send(
     ['emails.confirmation_mail'],
-    { username, link: `alegumes@gmail.com/register?token=${token}` },
+    { username, link: `${Env.get('URL_CONFIRMARION_MAIL')}?token=${token}` },
     message => {
       message
         .to(email)
