@@ -17,6 +17,7 @@
 
 require('./auth/confirmationMail')
 require('./client/auth/register')
+require('./client/auth/login')
 
 // Route.get('/hello', async () => {
 //   return { greeting: 'ELegumes' }

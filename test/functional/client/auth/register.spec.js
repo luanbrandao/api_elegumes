@@ -1,6 +1,6 @@
 'use strict'
 
-const { test, trait, afterEach } = use('Test/Suite')('User')
+const { test, trait, afterEach } = use('Test/Suite')('Register Client')
 // permite usar as requisições para API
 trait('Test/ApiClient')
 const Mail = use('Mail')
@@ -12,7 +12,7 @@ afterEach(async () => {
   await User.query().delete()
 })
 
-test('Register new client', async ({ client, assert }) => {
+test('register new client', async ({ client, assert }) => {
   Mail.fake()
 
   const response = await client.post('/v1/auth/client/register')
@@ -40,7 +40,7 @@ test('Register new client', async ({ client, assert }) => {
   Mail.restore()
 })
 
-test('Register client e-mail exist', async ({ client, assert }) => {
+test('register client e-mail exist', async ({ client, assert }) => {
   Mail.fake()
 
   await client.post('/v1/auth/client/register')
@@ -82,7 +82,7 @@ test('Register client e-mail exist', async ({ client, assert }) => {
   Mail.restore()
 })
 
-test('Confirmation Mail', async ({ client, assert }) => {
+test('confirmation Mail', async ({ client, assert }) => {
   Mail.fake()
 
   const user = await client.post('/v1/auth/client/register')
