@@ -19,6 +19,7 @@ require('./auth/confirmationMail')
 require('./client/auth/register')
 require('./client/auth/login')
 require('./client/dashboard/dashboard')
+require('./client/image/image')
 
 // Route.get('/hello', async () => {
 //   return { greeting: 'ELegumes' }
