@@ -8,6 +8,7 @@
 /**
  * Resourceful controller for interacting with images
  */
+const Transformer = use('App/Transformers/ImageTransformer')
 const Helpers = use('Helpers')
 const Image = use('App/Models/Image')
 
@@ -30,10 +31,13 @@ class ImageController {
    * @param {View} ctx.view
    */
   async index ({ request, response, pagination, transform }) {
+    // var images = await Image.query().orderBy('id', 'DESC')
+    //   .paginate(1, 10)
+
     var images = await Image.query().orderBy('id', 'DESC')
       .paginate(1, 10)
 
-    // images = await transform.paginate(images, )
+    images = await transform.paginate(images, Transformer)
 
     return response.send(images)
   }
@@ -125,9 +129,13 @@ class ImageController {
    * @param {View} ctx.view
    */
   async show ({ params: { id }, request, response, transform }) {
-    var image = await Image.findOrFail(id)
-    // image = transform.item(image, Transformer)
-    return response.send(image)
+    try {
+      var image = await Image.findOrFail(id)
+      image = await transform.item(image, Transformer)
+      return response.status(200).json({ data: image })
+    } catch (error) {
+      return response.status(400).json({ message: 'Falha na busca, tente novamente!' })
+    }
   }
 
   /**
