@@ -6,25 +6,25 @@ const Schema = use('Schema')
 class CategoryProductSchema extends Schema {
   async up () {
     await this.db.raw('CREATE EXTENSION IF NOT EXISTS "uuid-ossp";')
-    this.create('category_products', (table) => {
+    this.create('product_defaults', (table) => {
       table.uuid('id').primary().defaultTo(this.db.raw('uuid_generate_v4()'))
-
-      table.uuid('product_id').unsigned()
-        .references('id')
-        .inTable('products')
-        .onUpdate('CASCADE')
-        .onDelete('SET NULL')
-
-      table.uuid('category_id').unsigned()
+      table.string('name', 200)
+      table.boolean('active').defaultTo(false)
+      table.integer('weekly_sales', 8)
+      table.integer('monthly_sales', 8)
+      table
+        .uuid('category_id')
+        .unsigned()
         .references('id')
         .inTable('categories')
         .onUpdate('CASCADE')
         .onDelete('SET NULL')
+      table.timestamps()
     })
   }
 
   down () {
-    this.drop('category_products')
+    this.drop('product_defaults')
   }
 }
 

@@ -8,7 +8,6 @@ class ProductsSchema extends Schema {
     await this.db.raw('CREATE EXTENSION IF NOT EXISTS "uuid-ossp";')
     this.create('products', (table) => {
       table.uuid('id').primary().defaultTo(this.db.raw('uuid_generate_v4()'))
-      table.string('name', 200)
       table.decimal('price', 12, 2)
       table.boolean('active_promotion').defaultTo(false)
       table.decimal('price_promotion', 12, 2)
@@ -28,6 +27,13 @@ class ProductsSchema extends Schema {
         .unsigned()
         .references('id')
         .inTable('images')
+        .onUpdate('CASCADE')
+        .onDelete('SET NULL')
+      table
+        .uuid('product_default_id')
+        .unsigned()
+        .references('id')
+        .inTable('product_defaults')
         .onUpdate('CASCADE')
         .onDelete('SET NULL')
       table.timestamps()

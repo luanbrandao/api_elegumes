@@ -14,13 +14,12 @@ class Product extends Model {
     return this.belongsToMany('App/Models/Image')
   }
 
-  // Relacionamento entre produtos e categorias
-  categories () {
-    return this.belongsToMany('App/Models/Category')
-  }
-
   company () {
     return this.belongsTo('App/Models/Company', 'company_id', 'id')
+  }
+
+  productDefault () {
+    return this.belongsTo('App/Models/ProductDefault', 'product_default_id', 'id')
   }
 }
 
