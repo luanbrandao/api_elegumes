@@ -114,6 +114,23 @@ class imageSeeder {
       original_name: 'Farinha.jpg',
       extension: 'jpeg'
     })
+
+    // companies
+
+    await Image.create({
+      id: '123556d1-b065-4711-9ae8-508491cb8123',
+      path: 'frutaria01.jpeg',
+      size: 15973,
+      original_name: 'frutaria01.jpeg',
+      extension: 'jpeg'
+    })
+    await Image.create({
+      id: '123556d1-b078-4711-9ae8-508491cb8123',
+      path: 'frutaria02.jpg',
+      size: 15973,
+      original_name: 'frutaria02.jpg',
+      extension: 'jpg'
+    })
   }
 }
 
