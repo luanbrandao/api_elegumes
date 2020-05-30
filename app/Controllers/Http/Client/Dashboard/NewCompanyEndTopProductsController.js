@@ -1,6 +1,7 @@
 'use strict'
 const moment = require('moment')
-const CompanyTransformer = use('App/Transformers/Client/CompanyTransformer')
+const CompanyTransformer = use('App/Transformers/Company/CompanyTransformer')
+const ProductDefaultTransformer = use('App/Transformers/Product/ProductDefaultTransformer')
 
 const Company = use('App/Models/Company')
 const ProductDefault = use('App/Models/ProductDefault')
@@ -17,13 +18,14 @@ class NewCompanyEndTopProductsController {
         .limit(10)
         .fetch()
 
-      const topProducts = await ProductDefault.query()
+      let topProducts = await ProductDefault.query()
         .where('active', true)
         .orderBy('weekly_sales', 'desc')
         .limit(10)
         .fetch()
 
       newCompanies = await transform.collection(newCompanies, CompanyTransformer)
+      topProducts = await transform.collection(topProducts, ProductDefaultTransformer)
 
       return response.status(200).send({ data: { newCompanies, topProducts } })
     } catch (error) {

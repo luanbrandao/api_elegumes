@@ -8,6 +8,10 @@ class Company extends Model {
     return this.belongsTo('App/Models/Image')
   }
 
+  adress () {
+    return this.belongsTo('App/Models/Adress')
+  }
+
   // trata antes de salvar e apresetar os dados
   // formata os valores para o padrão do MYSQL
   // informa pro adonis os campos do tipo date
