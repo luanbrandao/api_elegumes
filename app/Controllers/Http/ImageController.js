@@ -35,7 +35,7 @@ class ImageController {
     //   .paginate(1, 10)
 
     var images = await Image.query().orderBy('id', 'DESC')
-      .paginate(1, 10)
+      .paginate(1, 20)
 
     images = await transform.paginate(images, Transformer)
 
