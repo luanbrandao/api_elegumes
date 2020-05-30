@@ -18,6 +18,24 @@ class AdressSeeder {
     const user = await User.all()
     const usersJson = user.toJSON()
 
+    // 2 endereços para as lojas
+    await Adress.create({
+      description: 'Rua do loja x',
+      street: 'rua x',
+      cep: '01010101',
+      neighborhood: 'lugar tão tão distânte',
+      city: 'Santarém',
+      state: 'Pará'
+    })
+    await Adress.create({
+      description: 'Rua do loja x',
+      street: 'rua x',
+      cep: '01010101',
+      neighborhood: 'lugar tão tão distânte',
+      city: 'Santarém',
+      state: 'Pará'
+    })
+
     await Adress.create({
       description: 'Rua do luan',
       street: 'casa do luan',

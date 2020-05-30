@@ -26,7 +26,7 @@ class CompanySchema extends Schema {
         .uuid('adress_id')
         .unsigned()
         .references('id')
-        .inTable('images')
+        .inTable('adresses')
         .onUpdate('CASCADE')
         .onDelete('SET NULL')
       table.timestamps()

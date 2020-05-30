@@ -9,6 +9,7 @@ class ProductsSchema extends Schema {
     this.create('products', (table) => {
       table.uuid('id').primary().defaultTo(this.db.raw('uuid_generate_v4()'))
       table.decimal('price', 12, 2)
+      table.integer('weight', 6)
       table.boolean('active_promotion').defaultTo(false)
       table.decimal('price_promotion', 12, 2)
       table.text('description')

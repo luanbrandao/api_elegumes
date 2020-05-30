@@ -25,14 +25,14 @@ class OrderItemSeeder {
 
     await OrderItem.create({
       quantity: 2,
-      subtotal: 12,
+      subtotal: 2,
       order_id: ordersJson[0].id,
       product_id: productsJson[0].id
     })
 
     await OrderItem.create({
       quantity: 3,
-      subtotal: 7,
+      subtotal: 3,
       order_id: ordersJson[1].id,
       product_id: productsJson[1].id
     })

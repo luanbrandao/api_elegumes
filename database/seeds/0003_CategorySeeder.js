@@ -17,19 +17,31 @@ const Category = use('App/Models/Category')
 class CategorySeeder {
   async run () {
     await Category.create({
-      title: 'Verdura',
-      description: 'descricao da categoria',
+      title: 'Verduras',
+      description: 'frescos',
       active: true
     })
 
     await Category.create({
-      title: 'Legume',
-      description: 'descricao da categoria',
+      title: 'Legumes',
+      description: 'Ótima qualidade',
       active: true
     })
     await Category.create({
-      title: 'Categoria x',
-      description: 'descricao da categoria',
+      title: 'Raízes',
+      description: 'limpinhas',
+      active: true
+    })
+
+    await Category.create({
+      title: 'Temperos',
+      description: 'cheirosos',
+      active: true
+    })
+
+    await Category.create({
+      title: 'Outros',
+      description: 'muito mais',
       active: true
     })
   }
