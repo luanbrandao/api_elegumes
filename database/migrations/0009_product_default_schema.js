@@ -19,6 +19,13 @@ class CategoryProductSchema extends Schema {
         .inTable('categories')
         .onUpdate('CASCADE')
         .onDelete('SET NULL')
+      table
+        .uuid('image_id')
+        .unsigned()
+        .references('id')
+        .inTable('images')
+        .onUpdate('CASCADE')
+        .onDelete('SET NULL')
       table.timestamps()
     })
   }
