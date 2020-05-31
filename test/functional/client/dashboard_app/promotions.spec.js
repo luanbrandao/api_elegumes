@@ -9,8 +9,6 @@ test('produtos com descontos',
     const response = await client.get('/v1/client/promotions').end()
     response.assertStatus(200)
     response.assertJSONSubset({
-      data: {
-        products: []
-      }
+      pagination: { total: 0, perPage: 20, page: 1, lastPage: 0 }
     })
   })

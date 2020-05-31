@@ -3,19 +3,22 @@
 const Product = use('App/Models/Product')
 const PromotionTransformer = use('App/Transformers/Promotions/PromotionTransformer')
 class ProductPromotionController {
-  async index ({ response, transform }) {
+  async index ({ response, transform, pagination }) {
     try {
-      let products = await Product.query()
+      const query = Product.query()
+
+      query
         .where('active', true)
         .where('active_promotion', true)
-        .limit(10)
         .fetch()
 
-      products = await transform.collection(products, PromotionTransformer)
+      let products = await query.paginate(pagination.page, pagination.perpage)
 
-      return response.status(200).send({ data: { products } })
+      products = await transform.paginate(products, PromotionTransformer)
+
+      return response.status(200).json(products)
     } catch (error) {
-      return response.status(400).send({ message: 'Falha na busca, tente novamente!' })
+      return response.status(400).send({ message: 'Falha na requisição, tente novamente!' })
     }
   }
 }
