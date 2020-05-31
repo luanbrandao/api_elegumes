@@ -16,7 +16,6 @@ class ImageProductTransformer extends BumblebeeTransformer {
     // toJSON
     image = image.toJSON()
     return {
-      id: image.id,
       url: image.url
     }
   }

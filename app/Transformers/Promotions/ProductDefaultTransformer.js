@@ -17,10 +17,7 @@ class ProductDefaultTransformer extends BumblebeeTransformer {
   transform (product) {
     product = product.toJSON()
     return {
-      id: product.id,
-      name: product.name,
-      weekly_sales: product.weekly_sales,
-      monthly_sales: product.birth
+      name: product.name
     }
   }
 

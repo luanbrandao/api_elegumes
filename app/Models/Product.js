@@ -14,6 +14,10 @@ class Product extends Model {
     return this.belongsToMany('App/Models/Image')
   }
 
+  default () {
+    return this.belongsTo('App/Models/ProductDefault', 'product_default_id', 'id')
+  }
+
   company () {
     return this.belongsTo('App/Models/Company', 'company_id', 'id')
   }

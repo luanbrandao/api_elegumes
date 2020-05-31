@@ -17,7 +17,6 @@ class CompanyTransformer extends BumblebeeTransformer {
   }
 
   transform (company) {
-    console.log(company)
     return {
       id: company.id,
       name: company.name,

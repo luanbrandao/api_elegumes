@@ -8,7 +8,7 @@
 /**
  * Resourceful controller for interacting with images
  */
-const Transformer = use('App/Transformers/Shared/ImageTransformer')
+const Transformer = use('App/Transformers/Image/ImageTransformer')
 const Helpers = use('Helpers')
 const Image = use('App/Models/Image')
 

@@ -52,15 +52,16 @@ class ProductSeeder {
 
     await Product.create({
       price: 6.30,
-      active_promotion: false,
-      price_promotion: 0,
+      active_promotion: true,
+      price_promotion: 6.00,
       type: 'weight',
       weight: 1000,
       description: 'tomate',
       technical_description: 'da cor verde',
       company_id: companiesJson[0].id,
       product_default_id: productDefaultJson[2].id,
-      active: true
+      active: true,
+      image_id: '123556d1-b078-4711-7bb7-508491cb8123'
     })
 
     await Product.create({
@@ -228,8 +229,8 @@ class ProductSeeder {
 
     await Product.create({
       price: 6.45,
-      active_promotion: false,
-      price_promotion: 0,
+      active_promotion: true,
+      price_promotion: 6.20,
       type: 'weight',
       weight: 1000,
       description: 'tomate',
@@ -241,8 +242,8 @@ class ProductSeeder {
 
     await Product.create({
       price: 3.45,
-      active_promotion: false,
-      price_promotion: 0,
+      active_promotion: true,
+      price_promotion: 3.00,
       type: 'amount',
       description: 'Abóbora',
       technical_description: 'da cor verde',
@@ -374,6 +375,7 @@ class ProductSeeder {
       company_id: companiesJson[1].id,
       product_default_id: productDefaultJson[13].id,
       active: true
+
     })
   }
 }
