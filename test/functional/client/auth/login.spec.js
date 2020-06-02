@@ -1,5 +1,4 @@
 'use strict'
-
 const { test, trait, afterEach } = use('Test/Suite')('Login Client')
 // permite usar as requisições para API
 trait('Test/ApiClient')
