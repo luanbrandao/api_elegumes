@@ -1,17 +1,17 @@
 /**
  * @swagger
- * /v1/client/search/products:
+ * /v1/client/search/companies:
  *   get:
  *     tags:
  *       - Pesquisa
- *     name: Pesquisa os produtos por nome com paginação
- *     summary: retorna os produtos
- *     description: faz uma busca pelo nome do produto com filtro por nome e paginação
+ *     name: Pesquisa as empresas por nome com paginação
+ *     summary: retorna as empresas
+ *     description: faz uma busca pelo nome das empresas com filtro por nome e paginação
  *     parameters:
  *       - name: name
  *         in: query
  *         type: string
- *         description: parte do nome produto
+ *         description: parte do nome da empresa
  *       - name: page
  *         in: query
  *         type: interge

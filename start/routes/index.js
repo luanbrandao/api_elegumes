@@ -21,7 +21,6 @@ require('./client/auth/login')
 require('./client/dashboard/dashboard')
 require('./client/image/image')
 require('./client/search/search')
-require('./client/search/searchProducts')
 
 // Route.get('/hello', async () => {
 //   return { greeting: 'ELegumes' }
