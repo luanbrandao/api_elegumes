@@ -8,6 +8,10 @@ class ProductDefault extends Model {
     return this.belongsTo('App/Models/Category')
   }
 
+  products () {
+    return this.hasMany('App/Models/product')
+  }
+
   image () {
     return this.belongsTo('App/Models/Image')
   }

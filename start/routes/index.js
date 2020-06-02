@@ -22,6 +22,11 @@ require('./client/dashboard/dashboard')
 require('./client/image/image')
 require('./client/search/search')
 
+/**
+ * Import Client (public) Routes
+ */
+require('./client')
+
 // Route.get('/hello', async () => {
 //   return { greeting: 'ELegumes' }
 // })
