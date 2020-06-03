@@ -6,7 +6,7 @@
  *       - Categorias
  *     name: Retorna as categorias e seus produtos
  *     summary: retorna as categorias
- *     description: retorna todas as categrias com 5 produtos ou com o valor informano no perpage
+ *     description: retorna os produtos de uma categoria com paginação
  *     parameters:
  *       - name: id
  *         in: path
