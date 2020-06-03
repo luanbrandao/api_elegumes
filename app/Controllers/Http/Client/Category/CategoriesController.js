@@ -38,8 +38,8 @@ class CategoriesController {
 
       return response.status(200).json({ data: { categories } })
     } catch (error) {
-      return response.status(400).send({ message: error })
-      // return response.status(400).send({ message: 'Falha na requisição, tente novamente!' })
+      // return response.status(400).send({ message: error })
+      return response.status(400).send({ message: 'Falha na requisição, tente novamente!' })
     }
   }
 }
