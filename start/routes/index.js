@@ -15,22 +15,22 @@
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 
+/**
+ * public client end admin
+ */
 require('./auth/confirmationMail')
-require('./client/auth/register')
-require('./client/auth/login')
-require('./client/dashboard/dashboard')
-require('./client/image/image')
-require('./client/search/search')
+
+/**
+ * private client end admin
+ */
+require('./image')
+
+/**
+ * authenticarion cliente
+ */
+require('./client/auth')
 
 /**
  * Import Client (public) Routes
  */
-require('./client')
-
-// Route.get('/hello', async () => {
-//   return { greeting: 'ELegumes' }
-// })
-
-// Route.get('/', async () => {
-//   return { greeting: 'Hello world in JSON' }
-// })
+require('./client/public')
