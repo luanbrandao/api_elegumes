@@ -29,3 +29,9 @@ Route.group(() => {
 })
   .prefix('v1/client/search')
   .namespace('Client/Search')
+
+Route.group(() => {
+  Route.get('company/:id', 'CompanyController.index').as('client.company')
+})
+  .prefix('v1/client')
+  .namespace('Client/Company')
