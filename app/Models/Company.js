@@ -12,6 +12,10 @@ class Company extends Model {
     return this.belongsTo('App/Models/Adress')
   }
 
+  comments () {
+    return this.hasMany('App/Models/Rating')
+  }
+
   // trata antes de salvar e apresetar os dados
   // formata os valores para o padrão do MYSQL
   // informa pro adonis os campos do tipo date

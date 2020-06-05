@@ -33,6 +33,42 @@ class RatingSeeder {
       rate: 4,
       comment: 'ótimo atendimento'
     })
+    await Rating.create({
+      user_id: usersJson[5].id,
+      company_id: companiesJson[0].id,
+      rate: 5,
+      comment: 'gostei bastente'
+    })
+    await Rating.create({
+      user_id: usersJson[6].id,
+      company_id: companiesJson[1].id,
+      rate: 4,
+      comment: 'ótimo atendimento'
+    })
+    await Rating.create({
+      user_id: usersJson[5].id,
+      company_id: companiesJson[0].id,
+      rate: 5,
+      comment: 'gostei bastente'
+    })
+    await Rating.create({
+      user_id: usersJson[6].id,
+      company_id: companiesJson[1].id,
+      rate: 4,
+      comment: 'ótimo atendimento'
+    })
+    await Rating.create({
+      user_id: usersJson[5].id,
+      company_id: companiesJson[0].id,
+      rate: 5,
+      comment: 'gostei bastente'
+    })
+    await Rating.create({
+      user_id: usersJson[6].id,
+      company_id: companiesJson[1].id,
+      rate: 4,
+      comment: 'ótimo atendimento'
+    })
   }
 }
 
