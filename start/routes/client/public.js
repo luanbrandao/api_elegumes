@@ -17,7 +17,7 @@ Route.group(() => {
 */
 Route.group(() => {
   Route.get('categories', 'CategoriesController.index').as('client.categories')
-  Route.get('categories/:id/produts', 'CategoriesProductsController.index').as('client.category.id.products')
+  Route.get('categories/:id/produts', 'CategoriesProductsController.show').as('client.category.id.products')
 })
   .prefix('v1/client')
   .namespace('Client/Category')
@@ -31,7 +31,7 @@ Route.group(() => {
   .namespace('Client/Search')
 
 Route.group(() => {
-  Route.get('company/:id', 'CompanyController.index').as('client.company')
+  Route.get('company/:id', 'CompanyController.show').as('client.company')
   Route.get('company/:id/products', 'CompanyProductsController.index').as('client.company.products')
   Route.get('company/:id/comments', 'CompanyCommentsController.index').as('client.company.comments')
 })

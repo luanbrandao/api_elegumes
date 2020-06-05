@@ -3,7 +3,7 @@
 const Company = use('App/Models/Company')
 const DetailsCompanyTransformer = use('App/Transformers/Company/DetailsCompanyTransformer')
 class CompanyController {
-  async index ({ params: { id }, response, transform, pagination }) {
+  async show ({ params: { id }, response, transform, pagination }) {
     try {
       let company = await Company.findOrFail(id)
       company = await transform.item(company, DetailsCompanyTransformer)
