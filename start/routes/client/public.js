@@ -32,6 +32,7 @@ Route.group(() => {
 
 Route.group(() => {
   Route.get('company/:id', 'CompanyController.index').as('client.company')
+  Route.get('company/:id/products', 'CompanyProductsController.index').as('client.company')
 })
   .prefix('v1/client')
   .namespace('Client/Company')

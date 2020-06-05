@@ -9,7 +9,8 @@ class ProductDefault extends Model {
   }
 
   products () {
-    return this.hasMany('App/Models/product')
+  // return this.hasMany('App/Models/Product', 'product_id', 'id')
+    return this.hasMany('App/Models/Product')
   }
 
   image () {
