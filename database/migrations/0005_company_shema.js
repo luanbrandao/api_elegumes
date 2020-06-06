@@ -23,10 +23,10 @@ class CompanySchema extends Schema {
         .onDelete('SET NULL')
 
       table
-        .uuid('adress_id')
+        .uuid('address_id')
         .unsigned()
         .references('id')
-        .inTable('adresses')
+        .inTable('addresses')
         .onUpdate('CASCADE')
         .onDelete('SET NULL')
       table.timestamps()

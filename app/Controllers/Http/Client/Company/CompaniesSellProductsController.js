@@ -33,7 +33,7 @@ class CompaniesSellProductsController {
         .orderBy('name')
 
       let companies = await queryCompanies.paginate(pagination.page, pagination.perpage)
-      companies = await transform.paginate(companies, CompanyTransformer)
+      companies = await transform.include('address').paginate(companies, CompanyTransformer)
 
       return response.status(200).json(companies)
     } catch (error) {

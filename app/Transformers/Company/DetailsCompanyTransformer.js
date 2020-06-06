@@ -2,7 +2,7 @@
 
 const BumblebeeTransformer = use('Bumblebee/Transformer')
 const ImageTransformer = use('App/Transformers/Image/SimpleImageTransformer')
-const AdressTransformer = use('App/Transformers/Adress/AdressTransformer')
+const AddressTransformer = use('App/Transformers/Address/AddressTransformer')
 /**
  * DetailsCompanyTransformer class
  *
@@ -13,7 +13,11 @@ class DetailsCompanyTransformer extends BumblebeeTransformer {
   // carrega a imagem da categoria
   static get defaultInclude () {
     // return ['image']
-    return ['image', 'adress']
+    return ['image']
+  }
+
+  static get availableInclude () {
+    return ['address']
   }
 
   transform (company) {
@@ -33,9 +37,9 @@ class DetailsCompanyTransformer extends BumblebeeTransformer {
     return this.item(company.getRelated('image'), ImageTransformer)
   }
 
-  includeAdress (company) {
+  includeAddress (company) {
     // relacionamento da company  com o endereço
-    return this.item(company.getRelated('adress'), AdressTransformer)
+    return this.item(company.getRelated('address'), AddressTransformer)
   }
 }
 

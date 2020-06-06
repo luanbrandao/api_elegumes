@@ -13,7 +13,11 @@ const CompanyTransformer = use('App/Transformers/Promotions/CompanyTransformer')
 class PromotionTransformer extends BumblebeeTransformer {
   // carrega a imagem do prduto
   static get defaultInclude () {
-    return ['images', 'image', 'default', 'company']
+    return ['image']
+  }
+
+  static get availableInclude () {
+    return ['images', 'default', 'company']
   }
 
   transform (product) {

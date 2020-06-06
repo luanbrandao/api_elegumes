@@ -12,14 +12,14 @@
 
 /** @type {import('@adonisjs/lucid/src/Factory')} */
 const Company = use('App/Models/Company')
-const Adress = use('App/Models/Adress')
+const Address = use('App/Models/Address')
 const Image = use('App/Models/Image')
 class CompanySeeder {
   async run () {
     const image = await Image.all()
     const imageJson = image.toJSON()
-    const adress = await Adress.all()
-    const adressJson = adress.toJSON()
+    const address = await Address.all()
+    const addressJson = address.toJSON()
 
     await Company.create({
       name: 'Frutlândia da Prainha',
@@ -27,7 +27,7 @@ class CompanySeeder {
       primary_phone: '1111111111',
       secundary_phone: '2222222222222',
       rating: 4,
-      adress_id: adressJson[0].id,
+      address_id: addressJson[0].id,
       image_id: imageJson[14].id,
       active: true
     })
@@ -38,7 +38,7 @@ class CompanySeeder {
       primary_phone: '1111111111',
       secundary_phone: '2222222222222',
       rating: 5,
-      adress_id: adressJson[1].id,
+      address_id: addressJson[1].id,
       image_id: imageJson[15].id,
       active: true
     })

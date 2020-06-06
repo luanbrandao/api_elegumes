@@ -24,7 +24,7 @@ class NewCompanyEndTopProductsController {
         .limit(10)
         .fetch()
 
-      newCompanies = await transform.collection(newCompanies, CompanyTransformer)
+      newCompanies = await transform.include('address').collection(newCompanies, CompanyTransformer)
       topProducts = await transform.collection(topProducts, ProductDefaultTransformer)
 
       return response.status(200).send({ data: { newCompanies, topProducts } })

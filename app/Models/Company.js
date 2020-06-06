@@ -8,8 +8,8 @@ class Company extends Model {
     return this.belongsTo('App/Models/Image')
   }
 
-  adress () {
-    return this.belongsTo('App/Models/Adress')
+  address () {
+    return this.belongsTo('App/Models/Address')
   }
 
   comments () {

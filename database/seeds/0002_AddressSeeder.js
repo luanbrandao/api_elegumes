@@ -2,7 +2,7 @@
 
 /*
 |--------------------------------------------------------------------------
-| AdressSeeder
+| AddressSeeder
 |--------------------------------------------------------------------------
 |
 | Make use of the Factory instance to seed database with dummy data or
@@ -11,15 +11,15 @@
 */
 
 /** @type {import('@adonisjs/lucid/src/Factory')} */
-const Adress = use('App/Models/Adress')
+const Address = use('App/Models/Address')
 const User = use('App/Models/User')
-class AdressSeeder {
+class AddressSeeder {
   async run () {
     const user = await User.all()
     const usersJson = user.toJSON()
 
     // 2 endereços para as lojas
-    await Adress.create({
+    await Address.create({
       description: 'Rua do loja x',
       street: 'rua x',
       cep: '01010101',
@@ -27,7 +27,7 @@ class AdressSeeder {
       city: 'Santarém',
       state: 'Pará'
     })
-    await Adress.create({
+    await Address.create({
       description: 'Rua do loja x',
       street: 'rua x',
       cep: '01010101',
@@ -36,7 +36,7 @@ class AdressSeeder {
       state: 'Pará'
     })
 
-    await Adress.create({
+    await Address.create({
       description: 'Rua do luan',
       street: 'casa do luan',
       cep: '01010101',
@@ -46,7 +46,7 @@ class AdressSeeder {
       user_id: usersJson[5].id
     })
 
-    await Adress.create({
+    await Address.create({
       description: 'Rua do admir',
       street: 'casa  do ademir',
       cep: '01010101',
@@ -58,4 +58,4 @@ class AdressSeeder {
   }
 }
 
-module.exports = AdressSeeder
+module.exports = AddressSeeder
