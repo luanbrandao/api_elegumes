@@ -1,15 +1,11 @@
 'use strict'
 
-const { test, trait, afterEach } = use('Test/Suite')('Company sell product')
+const { test, trait } = use('Test/Suite')('Company sell product')
 const Company = use('App/Models/Company')
 // permite usar as requisições para API
 trait('Test/ApiClient')
 
-afterEach(async () => {
-  await Company.query().delete()
-})
-
-test('retorna todas as lojas que vendo um determinado produto',
+test('retorna todas as lojas que vendem um determinado produto',
   async ({ client, assert }) => {
     const newCompany = await await Company.create({
       name: 'Frutlândia da Prainha',

@@ -9,6 +9,10 @@ test('pesquisa os produtos pelo nome com paginação',
     const response = await client.get('/v1/client/search/products').end()
     response.assertStatus(200)
     response.assertJSONSubset({
-      pagination: { total: 0, perPage: 20, page: 1, lastPage: 0 }
+      data: [
+        {
+          image: {}
+        }
+      ]
     })
   })

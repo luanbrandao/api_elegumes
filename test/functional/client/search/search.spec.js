@@ -9,7 +9,17 @@ test('pesquisa os produtos/lojas com filtro pelo nome',
     const response = await client.get('/v1/client/search').end()
     response.assertStatus(200)
     response.assertJSONSubset({
-      companies: { pagination: { total: 0, perPage: 10, page: 1, lastPage: 0 }, data: [] },
-      products: { pagination: { total: 0, perPage: 10, page: 1, lastPage: 0 }, data: [] }
+      companies: {
+        pagination: { },
+        data: [{
+          image: {}
+        }]
+      },
+      products: {
+        pagination: { },
+        data: [{
+          image: {}
+        }]
+      }
     })
   })

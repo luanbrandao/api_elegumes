@@ -9,20 +9,17 @@ afterEach(async () => {
   await Category.query().delete()
 })
 
-test('retornas os produtos de uma categorya usando seu id, com paginação',
+test('retornas os produtos de uma categoria usando seu id, com paginação',
   async ({ client, assert }) => {
-    const newCategory = await Category.create({
-      title: 'Legumes',
-      description: 'Ótima qualidade',
-      active: true
-    })
+    const category = await Category.all()
+    const categoryJson = category.toJSON()
 
-    const category = newCategory.toJSON()
-
-    const response = await client.get(`/v1/client/categories/${category.id}/produts/`).end()
+    const response = await client.get(`/v1/client/categories/${categoryJson[0].id}/produts/`).end()
     response.assertStatus(200)
     response.assertJSONSubset({
-      pagination: { total: 0, perPage: 20, page: 1, lastPage: 0 }
+      data: [{
+        image: {}
+      }]
     })
   })
 

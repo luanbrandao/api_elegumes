@@ -10,8 +10,8 @@ test('novas empresas e produtos mais vendidos da semana',
     response.assertStatus(200)
     response.assertJSONSubset({
       data: {
-        newCompanies: [],
-        topProducts: []
+        newCompanies: [{ image: {}, address: {} }],
+        topProducts: [{ image: {} }]
       }
     })
   })

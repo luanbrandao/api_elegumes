@@ -12,7 +12,7 @@ afterEach(async () => {
   await User.query().delete()
 })
 
-test('register new client', async ({ client, assert }) => {
+test('registro de novo cliente', async ({ client, assert }) => {
   Mail.fake()
 
   const response = await client.post('/v1/auth/client/register')
@@ -40,7 +40,7 @@ test('register new client', async ({ client, assert }) => {
   Mail.restore()
 })
 
-test('register client e-mail exist', async ({ client, assert }) => {
+test('registro de novo cliente com email já existente', async ({ client, assert }) => {
   Mail.fake()
 
   await client.post('/v1/auth/client/register')
