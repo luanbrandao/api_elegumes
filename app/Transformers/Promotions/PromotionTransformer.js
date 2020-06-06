@@ -17,7 +17,7 @@ class PromotionTransformer extends BumblebeeTransformer {
   }
 
   static get availableInclude () {
-    return ['images', 'default', 'company']
+    return ['images', 'productDefault', 'company']
   }
 
   transform (product) {
@@ -42,8 +42,8 @@ class PromotionTransformer extends BumblebeeTransformer {
     return this.item(product.getRelated('image'), ImageTransformer)
   }
 
-  includeDefault (product) {
-    return this.item(product.getRelated('default'), ProductDefaultTransformer)
+  includeProductDefault (product) {
+    return this.item(product.getRelated('productDefault'), ProductDefaultTransformer)
   }
 
   includeCompany (product) {

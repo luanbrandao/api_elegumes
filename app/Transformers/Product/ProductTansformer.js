@@ -16,7 +16,7 @@ class ProductTansformer extends BumblebeeTransformer {
   }
 
   static get availableInclude () {
-    return ['default']
+    return ['productDefault']
   }
 
   transform (product) {
@@ -36,9 +36,9 @@ class ProductTansformer extends BumblebeeTransformer {
     return this.item(company.getRelated('image'), ImageTransformer)
   }
 
-  includeDefault (company) {
+  includeProductDefault (company) {
     // relacionamento da company com a img
-    return this.item(company.getRelated('default'), SimpleProductDefaultTransformer)
+    return this.item(company.getRelated('productDefault'), SimpleProductDefaultTransformer)
   }
 }
 

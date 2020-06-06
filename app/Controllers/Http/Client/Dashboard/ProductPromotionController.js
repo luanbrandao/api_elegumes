@@ -14,7 +14,7 @@ class ProductPromotionController {
 
       let products = await query.paginate(pagination.page, pagination.perpage)
 
-      products = await transform.include('default,company').paginate(products, PromotionTransformer)
+      products = await transform.include('productDefault,company').paginate(products, PromotionTransformer)
 
       return response.status(200).json(products)
     } catch (error) {
