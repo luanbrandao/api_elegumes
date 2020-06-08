@@ -4,11 +4,6 @@
 const Model = use('Model')
 
 class Order extends Model {
-  // informa que a tabela não tem o campo timesTamp
-  static get traits () {
-    return ['App/Models/Traits/NoTimestamp']
-  }
-
   items () {
     // hasMany, pois 1 pedido pode ter varias orderns,
     // mas uma ordem só pode pertencer a 1 pedido

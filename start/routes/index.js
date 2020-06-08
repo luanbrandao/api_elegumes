@@ -34,3 +34,7 @@ require('./client/auth')
  * Import Client (public) Routes
  */
 require('./client/public')
+/**
+ * Import Client (autheticate) Routes
+ */
+require('./client/private')
