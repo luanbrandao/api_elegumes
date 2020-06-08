@@ -2,6 +2,7 @@
 const Database = use('Database')
 const Order = use('App/Models/Order')
 const OrderService = use('App/Services/Orders/OrderService')
+const OrderTransformer = use('App/Transformers/Order/OrderTransformer')
 
 class OrderController {
   async store ({ params, request, response, transform, auth }) {
@@ -23,7 +24,11 @@ class OrderController {
       // ativa os hooks de cálculo automático de total e quantidade de items
       order = await Order.find(order.id)
 
-      return response.json({ order })
+      const _order = await transform
+        .include('items')
+        .item(order, OrderTransformer)
+
+      return response.json({ _order })
     } catch (error) {
       await trx.rollback()
       return response.status(400).send({

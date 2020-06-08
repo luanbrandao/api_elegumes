@@ -12,12 +12,12 @@ const SimpleProductDefaultTransformer = use('App/Transformers/Product/SimpleProd
 class ProductTansformer extends BumblebeeTransformer {
   // carrega a imagem do prduto
   static get defaultInclude () {
-    return ['image']
+    return ['image', 'productDefault']
   }
 
-  static get availableInclude () {
-    return ['productDefault']
-  }
+  // static get availableInclude () {
+  //   return ['productDefault']
+  // }
 
   transform (product) {
     product = product.toJSON()

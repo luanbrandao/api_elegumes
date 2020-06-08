@@ -18,7 +18,7 @@ class CompanyProductsController {
         .orderBy('name')
 
       let products = await query.paginate(pagination.page, pagination.perpage)
-      products = await transform.include('productDefault').paginate(products, ProductTansformer)
+      products = await transform.paginate(products, ProductTansformer)
 
       return response.status(200).json(products)
     } catch (error) {
