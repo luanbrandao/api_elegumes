@@ -21,8 +21,19 @@ class OrderController {
 
       await trx.commit()
 
-      // ativa os hooks de cálculo automático de total e quantidade de items
+      /*
+      * ativa os hooks de cálculo automático de total e quantidade de items
+      */
       order = await Order.find(order.id)
+
+      const total = parseFloat(order.total)
+
+      /*
+      *  atualiza o total depois pois ele faz ele cálculo só depois que cria a ordem,
+      *  varendo todos os seus itens
+      */
+      order.total = total
+      await order.save()
 
       order = await transform
         .include('items')
