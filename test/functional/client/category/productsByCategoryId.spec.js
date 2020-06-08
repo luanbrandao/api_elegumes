@@ -1,13 +1,9 @@
 'use strict'
 const Category = use('App/Models/Category')
 
-const { test, trait, afterEach } = use('Test/Suite')('Categories')
+const { test, trait } = use('Test/Suite')('Categories')
 // permite usar as requisições para API
 trait('Test/ApiClient')
-
-afterEach(async () => {
-  await Category.query().delete()
-})
 
 test('retornas os produtos de uma categoria usando seu id, com paginação',
   async ({ client, assert }) => {
