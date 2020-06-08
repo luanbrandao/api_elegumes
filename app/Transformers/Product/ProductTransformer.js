@@ -9,7 +9,7 @@ const SimpleProductDefaultTransformer = use('App/Transformers/Product/SimpleProd
  * @class ProductTansformer
  * @constructor
  */
-class ProductTansformer extends BumblebeeTransformer {
+class ProductTransformer extends BumblebeeTransformer {
   // carrega a imagem do prduto
   static get defaultInclude () {
     return ['image', 'productDefault']
@@ -42,4 +42,4 @@ class ProductTansformer extends BumblebeeTransformer {
   }
 }
 
-module.exports = ProductTansformer
+module.exports = ProductTransformer

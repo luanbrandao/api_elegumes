@@ -1,7 +1,7 @@
 'use strict'
 
 const Product = use('App/Models/Product')
-const ProductTansformer = use('App/Transformers/Product/ProductTansformer')
+const ProductTransformer = use('App/Transformers/Product/ProductTransformer')
 
 class CompanyProductsController {
   async index ({ params: { id }, response, transform, pagination }) {
@@ -18,7 +18,7 @@ class CompanyProductsController {
         .orderBy('name')
 
       let products = await query.paginate(pagination.page, pagination.perpage)
-      products = await transform.paginate(products, ProductTansformer)
+      products = await transform.paginate(products, ProductTransformer)
 
       return response.status(200).json(products)
     } catch (error) {
