@@ -10,6 +10,7 @@ class OrderSchema extends Schema {
       table.uuid('id').primary().defaultTo(this.db.raw('uuid_generate_v4()'))
       table.decimal('total', 12, 2).defaultTo(0.0)
       table.enu('status', ['pending', 'cencelled', 'shipped', 'paid', 'finished'])
+        .defaultTo('pending')
 
       table
         .uuid('user_id')

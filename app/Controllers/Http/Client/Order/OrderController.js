@@ -19,6 +19,10 @@ class OrderController {
       }
 
       await trx.commit()
+
+      // ativa os hooks de cálculo automático de total e quantidade de items
+      order = await Order.find(order.id)
+
       return response.json({ order })
     } catch (error) {
       await trx.rollback()

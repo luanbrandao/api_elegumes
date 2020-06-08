@@ -8,5 +8,6 @@ OrderItemHook.updateSubtotal = async modelInstance => {
     modelInstance.subtotal = modelInstance.quantity * product.price
   } else if (product.type === 'weight') {
     modelInstance.subtotal = (modelInstance.weight / product.weight) * product.price
+    modelInstance.quantity = 1
   }
 }
