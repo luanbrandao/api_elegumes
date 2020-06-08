@@ -12,7 +12,7 @@ class OrderController {
       const { items, company } = request.only(['items', 'company'])
       const client = await auth.getUser()
 
-      var order = await Order.create({ user_id: client.id, company_id: company }, trx)
+      let order = await Order.create({ user_id: client.id, company_id: company }, trx)
 
       const service = new OrderService(order, trx)
       if (items.length > 0) {
@@ -24,16 +24,15 @@ class OrderController {
       // ativa os hooks de cálculo automático de total e quantidade de items
       order = await Order.find(order.id)
 
-      const _order = await transform
+      order = await transform
         .include('items')
         .item(order, OrderTransformer)
 
-      return response.json({ _order })
+      return response.json({ order })
     } catch (error) {
       await trx.rollback()
       return response.status(400).send({
-        // message: 'Não foi possível criar seu pedido no momento!'
-        message: error
+        message: 'Não foi possível criar seu pedido no momento!'
       })
     }
   }

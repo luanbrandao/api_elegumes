@@ -6,8 +6,6 @@
  *       - Dashboard
  *     name: Empresas e Top Produtos
  *     summary: empresas e produtos mais vendidos da semana
- *     security:
- *       - bearerAuth: []
  *     produces:
  *       - application/json
  *     consumes:
@@ -27,8 +25,6 @@
  *       - Dashboard
  *     name: Promoções
  *     summary: retorna os produtos que estão com desconto
- *     security:
- *       - bearerAuth: []
  *     produces:
  *       - application/json
  *     consumes:

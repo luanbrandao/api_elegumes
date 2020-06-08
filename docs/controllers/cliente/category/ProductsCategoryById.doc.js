@@ -3,7 +3,7 @@
  * /v1/client/categories/{id}/produts:
  *   get:
  *     tags:
- *       - Categorias
+ *       - Cetegorias
  *     name: Retorna as categorias e seus produtos
  *     summary: retorna as categorias
  *     description: retorna os produtos de uma categoria com paginação

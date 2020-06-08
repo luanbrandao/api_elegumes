@@ -6,8 +6,6 @@
  *       - Auth
  *     name: Login de Cliente
  *     summary: usuário se autêntica na aplicação
- *     security:
- *       - bearerAuth: []
  *     produces:
  *       - application/json
  *     consumes:

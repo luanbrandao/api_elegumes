@@ -9,7 +9,7 @@ const ConfirmationMail = use('App/Models/ConfirmationMail')
 
 afterEach(async () => {
   await ConfirmationMail.query().delete()
-  await User.query().delete()
+  // await User.query().delete()
 })
 
 test('registro de novo cliente', async ({ client, assert }) => {

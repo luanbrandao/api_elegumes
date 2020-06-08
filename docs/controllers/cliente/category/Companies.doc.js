@@ -3,7 +3,7 @@
  * /v1/client/categories:
  *   get:
  *     tags:
- *       - Categorias
+ *       - Cetegorias
  *     name: Retorna as categorias e seus produtos
  *     summary: retorna as categorias
  *     description: retorna todas as categrias com 5 produtos ou com o valor informano no perpage

@@ -3,7 +3,7 @@
  * /v1/client/company/{id}:
  *   get:
  *     tags:
- *       - Company
+ *       - Empresa
  *     name: Retorna a empresa.
  *     summary: retorna a empresa.
  *     description: retorna todos os dados da empresa.

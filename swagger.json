@@ -1,0 +1,80 @@
+{
+  "swagger": "2.0",
+  "info": {
+      "title": "Elegumes",
+      "version": "0.0.1",
+      "contact": {
+          "name": "Luan Brandão",
+          "email": "luanbrandao4@gmil.com",
+          "url": ""
+      },
+      "license": {
+          "name": "MIT",
+          "url": "https://opensource.org/licenses/MIT"
+      },
+      "description": "Converter and validator for Swagger 2.0 to OpenAPI 3.0.x definitions",
+      "termsOfService": "https://opensource.org/licenses/MIT"
+  },
+  "securityDefinitions": {
+    "jwt": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "Authorization"
+    }
+},
+"servers": [
+  {
+      "url": "",
+      "description": "Local Dev, or from Heroku"
+  },
+  {
+      "url": "",
+      "description": "With docker-compose and nginx proxy"
+  }
+],
+  "externalDocs": {
+      "url": ""
+  },
+  "schemes": [
+      "https",
+      "http"
+  ],
+  "consumes": [
+      "application/json",
+      "application/x-yaml"
+  ],
+  "produces": [
+      "application/json; charset=utf-8",
+      "application/x-yaml"
+  ],
+  "host": "localhost:7777",
+  "tags": [
+      {
+          "name": "Teste",
+          "description": "Rotas para verificar se o serve esta online"
+      },
+      {
+          "name": "Autenticação",
+          "description": "Autenticação rotas"
+      },
+      {
+          "name": "Passagueiro",
+          "description": "Passagueiro rotas"
+      },
+      {
+          "name": "Motorista",
+          "description": "Validation rotas"
+      }
+  ],
+  "definitions": {
+      "validationResult": {
+          "type": "object",
+          "properties": {
+              "openapi": {
+                  "type": "string"
+              }
+          },
+          "required": [ "openapi" ]
+      }
+  }
+}

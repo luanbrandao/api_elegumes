@@ -3,7 +3,7 @@
  * /v1/client/companies/sell/product/{id}:
  *   get:
  *     tags:
- *       - Company
+ *       - Empresa
  *     name: Retorna todas as empresas que vende certo produto
  *     summary: Retorna todas as empresas que vende certo produto
  *     description: Retorna todas as empresas que vende esse produto.

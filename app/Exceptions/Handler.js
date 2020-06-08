@@ -56,8 +56,10 @@ class ExceptionHandler extends BaseExceptionHandler {
    * @return {void}
    */
   async report (error, { request }) {
-    Raven.config(Config.get('services.sentry.dsn'))
-    Raven.captureException(error)
+    if (Env.get('NODE_ENV') !== 'testing') {
+      Raven.config(Config.get('services.sentry.dsn'))
+      Raven.captureException(error)
+    }
 
     if (error.status >= 500) {
       Logger.error(error.message, {

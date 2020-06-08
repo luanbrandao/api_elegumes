@@ -3,7 +3,7 @@
  * /v1/client/company/{id}/comments:
  *   get:
  *     tags:
- *       - Company
+ *       - Empresa
  *     name: Retorna os produtos de uma empresa.
  *     summary: Retorna os produtos de uma empresa..
  *     description: Retorna os produtos de uma empresa com paginação.

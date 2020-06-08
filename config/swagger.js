@@ -16,40 +16,32 @@ module.exports = {
     swaggerDefinition: {
       info: {
         title: 'ELegumes MarketPlace 💘 Swagger',
-        version: '0.0.1'
+        version: '0.0.1',
+        contact: {
+          name: 'Luan Brandão',
+          email: 'luanbrandao4@gmil.com',
+          url: ''
+        },
+        license: {
+          name: 'MIT',
+          url: 'https://opensource.org/licenses/MIT'
+        },
+        description: 'Funcionalidades desenvolvidas na API até o',
+        termsOfService: 'https://opensource.org/licenses/MIT'
       },
 
       basePath: '/',
 
       // Example security definitions.
       securityDefinitions: {
-        ApiKey: {
-          description: 'ApiKey description',
-          name: 'Authorization'
-        },
-
-        // OAuth2 configuration
-        OAuth2: {
-          authorizationUrl: 'https://example.com/oauth/authorize',
-          tokenUrl: 'https://example.com/oauth/token',
-
-          // define your scopes here
-          // remove read, write and admin if not necessary
-          scopes: {
-            read: 'Grants read access (this is just sample)',
-            write: 'Grants write access (this is just sample)',
-            admin: 'Grants read and write access to administrative information (this is just sample)'
-          }
+        bearerAuth: {
+          type: 'apiKey',
+          name: 'Authorization',
+          scheme: 'bearer',
+          in: 'header'
         }
       }
     },
-
-    // Path to the API docs
-    // Sample usage
-    // apis: [
-    //    'docs/**/*.yml',    // load recursive all .yml file in docs directory
-    //    'docs/**/*.js',     // load recursive all .js file in docs directory
-    // ]
     apis: [
       // 'app/**/*.js',
       'docs/**/*.js',

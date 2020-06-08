@@ -6,8 +6,6 @@
  *       - Auth
  *     name: Cadastro de Cliente
  *     summary: cadastra um novo usuário no sistema
- *     security:
- *       - bearerAuth: []
  *     produces:
  *       - application/json
  *     consumes:
