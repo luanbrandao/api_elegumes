@@ -17,6 +17,7 @@ class ClientSessionController {
         const data = await auth.withRefreshToken().attempt(email, password)
       */
       const data = await auth.attempt(email, password)
+      data.user = user
       return response.status(200).send({ data: data })
     } catch (error) {
       return response.status(400).send({ error: 'Falha na autenticação, tente novamente!' })
