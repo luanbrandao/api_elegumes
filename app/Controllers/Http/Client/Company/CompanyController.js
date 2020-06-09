@@ -7,6 +7,7 @@ class CompanyController {
     try {
       let company = await Company.findOrFail(id)
 
+      const total = await company.ratings().count('rate')
       const one = await company.ratings().where('rate', 1).count()
       const two = await company.ratings().where('rate', 2).count()
       const three = await company.ratings().where('rate', 3).count()
@@ -22,6 +23,7 @@ class CompanyController {
       }
 
       company = await transform.include('address').item(company, DetailsCompanyTransformer)
+      company.totalStars = parseInt(total[0].count)
       company.stars = stars
 
       return response.status(200).json({ data: { company } })
