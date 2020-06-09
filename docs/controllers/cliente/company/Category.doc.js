@@ -16,7 +16,7 @@
  *         description: uuid da empresa
  *     responses:
  *       '200':
- *         description: retorna { data :{company} }.
+ *         description: retorna { data :company:{ image:{} ,adress:{}, stars:{} } }.
  *       '400':
  *         description: Falha na requisição, tente novamente
  */

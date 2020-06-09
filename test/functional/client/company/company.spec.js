@@ -15,7 +15,7 @@ test('detalhes loja',
 
     response.assertJSONSubset({
       data: {
-        company: { image: {}, address: {} }
+        company: { image: {}, address: {}, stars: {} }
       }
     })
   })
