@@ -1,6 +1,6 @@
 /**
  * @swagger
- * /v1/client/order:
+ * /v1/client/orders:
  *   post:
  *     tags:
  *       - Pedido
@@ -52,4 +52,35 @@
  *         description: Não foi possível criar seu pedido no momento!
  *       '500':
  *         description: Problema no servidor.
+ */
+
+/**
+ * @swagger
+ * /v1/client/orders:
+ *   get:
+ *     tags:
+ *       - Pedido
+ *     name: Retorna todos os pedidos do usuárop
+ *     summary: Retorna todos os pedidos do usuárop
+ *     description: retorna os pedidos ordenado por data e com paginação, filtro do status.
+ *     security:
+ *       - bearerAuth: []
+  *     parameters:
+ *       - name: status
+ *         in: query
+ *         type: string
+ *         description: filtros, retorna os pedidos por status
+ *       - name: page
+ *         in: query
+ *         type: interge
+ *         description: número da página
+ *       - name: perpage
+ *         in: query
+ *         type: interge
+ *         description: qtd de valores no retorno
+ *     responses:
+ *       '200':
+ *         description: retorna { categories }.
+ *       '400':
+ *         description: Falha na requisição, tente novamente
  */

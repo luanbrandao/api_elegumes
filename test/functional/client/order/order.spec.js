@@ -22,7 +22,7 @@ test('criação de novo pedido do cliente',
     const users = await User.all()
     const usersJson = users.toJSON()
 
-    const response = await client.post('/v1/client/order')
+    const response = await client.post('/v1/client/orders')
       .loginVia(usersJson[0])
       .send({
         items: [
@@ -39,5 +39,21 @@ test('criação de novo pedido do cliente',
           { product: { image: null, productDefault: {} } }
         ]
       }
+    })
+  })
+test('busca todos os pedidos do cliente',
+
+  async ({ client, assert }) => {
+    const users = await User.all()
+    const usersJson = users.toJSON()
+
+    const response = await client.get('/v1/client/orders')
+      .loginVia(usersJson[5])
+      .end()
+
+    response.assertStatus(200)
+    response.assertJSONSubset({
+      pagination: {},
+      data: [{ company: { image: {} } }]
     })
   })

@@ -5,6 +5,29 @@ const OrderService = use('App/Services/Orders/OrderService')
 const OrderTransformer = use('App/Transformers/Order/OrderTransformer')
 
 class OrderController {
+  async show ({ params, request, response, transform, auth, pagination }) {
+    const client = await auth.getUser()
+    const { status } = request.only(['status'])
+
+    const query = Order.query()
+
+    /*
+        pending,cancelled,shipped,paid,finished
+    */
+    if (status) {
+      query.where('status', status)
+    }
+
+    let orders = await query
+      .where('user_id', client.id)
+      .orderBy('created_at', 'desc')
+      .paginate(pagination.page, pagination.perpage)
+
+    orders = await transform.include('company').paginate(orders, OrderTransformer)
+
+    return response.json(orders)
+  }
+
   async store ({ params, request, response, transform, auth }) {
     const trx = await Database.beginTransaction()
 
