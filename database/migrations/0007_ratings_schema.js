@@ -8,7 +8,7 @@ class RatingsSchema extends Schema {
     await this.db.raw('CREATE EXTENSION IF NOT EXISTS "uuid-ossp";')
     this.create('ratings', (table) => {
       table.uuid('id').primary().defaultTo(this.db.raw('uuid_generate_v4()'))
-      table.decimal('rate', 12, 2).defaultTo(0.0)
+      table.integer('rate').unsigned().defaultTo(0)
       table.text('comment')
 
       table

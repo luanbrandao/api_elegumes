@@ -9,3 +9,11 @@ Route.group(() => {
   .middleware('auth')
   .prefix('v1/client')
   .namespace('Client/Order')
+
+Route.group(() => {
+  Route.post('', 'RatingController.store').as('client.rating.store')
+    .validator('Rate')
+})
+  .middleware('auth')
+  .prefix('v1/client/ratings')
+  .namespace('Client/Rating')
