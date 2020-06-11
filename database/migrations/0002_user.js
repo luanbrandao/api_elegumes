@@ -20,6 +20,10 @@ class UserSchema extends Schema {
       table.boolean('confirmation_mail').defaultTo(false)
       table.timestamp('confirmation_mail_created_at')
 
+      // forgot password
+      table.string('token_forgot')
+      table.timestamp('forgot_created_at')
+
       table
         .uuid('image_id')
         .unsigned()
