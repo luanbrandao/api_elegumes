@@ -18,7 +18,7 @@
 /**
  * public client end admin
  */
-require('./auth/confirmationMail')
+require('./auth/auth')
 
 /**
  * private client end admin

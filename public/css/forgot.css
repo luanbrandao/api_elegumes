@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding:0;
+  box-sizing:border-box;
+  outline:0;
+}
+
+body {
+  background: #312E38;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  }
+
+body,input, button {
+  font-family: 'Roboto Slab', serif;
+  font-size:16px
+}
+
+
+h1,h2,h3,h4,h5,h6, strong {
+  font-weight:500;
+}
+
+button {
+  cursor : pointer;
+}
+
+.container {
+  /* 100% de altura */
+  height: 100vh;
+  display: flex;
+  /* faz com que os itens do container tenham a altura máxima da page */
+  align-items: stretch;
+
+  }
+
+  .content {
+  /* padding: 50px; */
+  display: flex;
+  flex-direction: column;
+  /* centralina  */
+  align-items: center;
+
+  place-content: center;
+  /* justify-content: center;
+  align-items: center; */
+  width: 100%;
+  max-width: 700px;
+  }
+
+  .content form {
+    margin: 20px 0;
+    width: 340px;
+
+    text-align: center;
+  }
+
+
+  .content form   h1 {
+    margin-bottom: 24px;
+  }
+
+  input {
+    background: #232129;
+    border-radius: 10px;
+    border: 2px solid #232129;
+    padding: 16px;
+    width: 100%;
+    color: #f4ede8;
+  }
+
+  input ::placeholder {
+    color: #666360;
+  }
+  input  + input {
+    /* a parti do primeiro input */
+    margin-top: 8px;
+  }
+
+  button {
+    background: #268F24;
+    height: 56px;
+    border-radius: 10px;
+    border: 0;
+    padding: 0 16px;
+    color: #312e38;
+    width: 100%;
+    font-weight: 500;
+    margin-top: 16px;
+    transition: background-color 0.2s;
+  }
+
+
+
+  .background {
+  /* acupa todo o espaço */
+  flex: 1;
+  background: url('/assets/background.jpg') no-repeat center;
+  /* ocupa toda a div, caso a img seja menor que ela */
+  background-size: cover;
+  }
