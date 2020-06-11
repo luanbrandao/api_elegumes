@@ -2,9 +2,11 @@
 const { test, trait } = use('Test/Suite')('Autenticação Cliente')
 // permite usar as requisições para API
 trait('Test/ApiClient')
+const Mail = use('Mail')
 const User = use('App/Models/User')
 
 test('resete de senha ', async ({ client, assert }) => {
+  Mail.fake()
   await User.create({
     username: 'forgot',
     phone: '123123123123',
@@ -20,6 +22,7 @@ test('resete de senha ', async ({ client, assert }) => {
     .end()
 
   response.assertStatus(200)
+  Mail.restore()
 })
 
 test('resete de senha com e-mail que não existe', async ({ client, assert }) => {

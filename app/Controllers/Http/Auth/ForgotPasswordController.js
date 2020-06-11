@@ -3,7 +3,7 @@
 const moment = require('moment')
 const User = use('App/Models/User')
 const crypto = require('crypto')
-
+const Mail = use('Mail')
 class ForgotPasswordController {
   async store ({ request, response }) {
     try {
@@ -13,7 +13,20 @@ class ForgotPasswordController {
 
       user.token_forgot = crypto.randomBytes(10).toString('hex')
       user.forgot_created_at = new Date()
+
+      await Mail.send(
+        ['emails.forgot_password'],
+        { email, token_forgot: user.token_forgot, link: `elegumes.com.br?token=${user.token}` },
+        message => {
+          message
+            .to(user.email)
+            .from('elegumes.com.br', ' elegumes')
+            .subject('Recuperação de senha')
+        }
+      )
+
       await user.save()
+
       return response.status(200).json({})
     } catch (err) {
       return response.status(err.status).send({ message: 'Algo não deu certo, esse e-mail existe?' })
