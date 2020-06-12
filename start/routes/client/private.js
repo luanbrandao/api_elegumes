@@ -17,3 +17,11 @@ Route.group(() => {
   .middleware('auth')
   .prefix('v1/client/ratings')
   .namespace('Client/Rating')
+
+Route.group(() => {
+  Route.post('', 'ContactUsController.store').as('client.contact.store')
+    .validator('ContactUs')
+})
+  .middleware('auth')
+  .prefix('v1/client/contacts')
+  .namespace('Client/ContactUs')
