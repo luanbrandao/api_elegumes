@@ -25,3 +25,11 @@ Route.group(() => {
   .middleware('auth')
   .prefix('v1/client/contacts')
   .namespace('Client/ContactUs')
+
+Route.group(() => {
+  Route.put('profile', 'ClientController.update').as('client.profile.update')
+    .validator('User')
+})
+  .middleware('auth')
+  .prefix('v1/client')
+  .namespace('Client/Client')
