@@ -25,7 +25,9 @@ class CompanyTransformer extends BumblebeeTransformer {
       name: company.name,
       owner: company.owner,
       // falta fazer o cálculo das médias das avaliações
-      rating: company.rating | 0
+      rating: company.rating | 0,
+      // só vai retornar esse campo quando for buscar as lojas que vendem um produto
+      price_product: company.price_product
     }
   }
 
