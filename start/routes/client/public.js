@@ -43,3 +43,9 @@ Route.group(() => {
 })
   .prefix('v1/client')
   .namespace('Client/Company')
+
+Route.group(() => {
+  Route.get('', 'AnnouncementController.index').as('announcements.index')
+})
+  .prefix('v1/client/announcements')
+  .namespace('Client/Announcement')

@@ -53,7 +53,6 @@ test('busca todos os pedidos do cliente',
 
     response.assertStatus(200)
     response.assertJSONSubset({
-      pagination: {},
       data: [{ company: { image: {} } }]
     })
   })

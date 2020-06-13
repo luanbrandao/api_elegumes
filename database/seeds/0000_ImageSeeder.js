@@ -134,11 +134,28 @@ class imageSeeder {
     })
 
     // simula a img adicionada pelo dono, para substituir a img default
+    // 17
     await Image.create({
       id: '123556d1-b078-4711-7bb7-508491cb8123',
       path: 'tomate2.jpg',
       size: 15973,
       original_name: 'tomate2.jpg',
+      extension: 'jpg'
+    })
+    // 18
+    await Image.create({
+      id: '123556d1-b001-4711-7bb7-508491cb8123',
+      path: 'anuncio1.jpg',
+      size: 15973,
+      original_name: 'anuncio1.jpg',
+      extension: 'jpg'
+    })
+    // 19
+    await Image.create({
+      id: '123556d1-b002-4711-7bb7-508491cb8123',
+      path: 'anuncio2.jpg',
+      size: 15973,
+      original_name: 'anuncio2.jpg',
       extension: 'jpg'
     })
   }

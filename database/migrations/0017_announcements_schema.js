@@ -3,23 +3,21 @@
 /** @type {import('@adonisjs/lucid/src/Schema')} */
 const Schema = use('Schema')
 
-class AdressSchema extends Schema {
+class ConfirmationMailSchema extends Schema {
   async up () {
     await this.db.raw('CREATE EXTENSION IF NOT EXISTS "uuid-ossp";')
-    this.create('addresses', (table) => {
+    this.create('announcements', (table) => {
       table.uuid('id').primary().defaultTo(this.db.raw('uuid_generate_v4()'))
+      table.string('title')
       table.text('description')
-      table.string('street', 200)
-      table.integer('cep', 15)
-      table.integer('number', 15)
-      table.text('neighborhood')
-      table.string('city')
-      table.string('state')
+      table.boolean('active').defaultTo(false)
+      table.string('url')
+      table.timestamp('expiration')
       table
-        .uuid('user_id')
+        .uuid('image_id')
         .unsigned()
         .references('id')
-        .inTable('users')
+        .inTable('images')
         .onUpdate('CASCADE')
         .onDelete('SET NULL')
       table.timestamps()
@@ -27,8 +25,8 @@ class AdressSchema extends Schema {
   }
 
   down () {
-    this.drop('addresses')
+    this.drop('announcements')
   }
 }
 
-module.exports = AdressSchema
+module.exports = ConfirmationMailSchema
