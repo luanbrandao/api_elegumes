@@ -15,6 +15,8 @@ class AdressSchema extends Schema {
       table.text('neighborhood')
       table.string('city')
       table.string('state')
+      table.string('lat')
+      table.string('long')
       table
         .uuid('user_id')
         .unsigned()

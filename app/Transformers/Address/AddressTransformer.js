@@ -17,7 +17,9 @@ class AddressTransformer extends BumblebeeTransformer {
       number: address.birth,
       neighborhood: address.neighborhood,
       city: address.city,
-      state: address.state
+      state: address.state,
+      lat: address.lat,
+      long: address.long
     }
   }
 }

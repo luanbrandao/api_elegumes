@@ -33,3 +33,11 @@ Route.group(() => {
   .middleware('auth')
   .prefix('v1/client')
   .namespace('Client/Client')
+
+Route.group(() => {
+  Route.post('addresses', 'AddressController.store').as('client.address.post')
+    .validator('Address')
+})
+  .middleware('auth')
+  .prefix('v1/client')
+  .namespace('Client/Address')

@@ -39,6 +39,10 @@ class User extends Model {
     return this.hasMany('App/Models/ContactUs')
   }
 
+  addresses () {
+    return this.hasMany('App/Models/Address')
+  }
+
   image () {
     return this.belongsTo('App/Models/Image')
   }
