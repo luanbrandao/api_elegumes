@@ -35,6 +35,7 @@ Route.group(() => {
   .namespace('Client/Client')
 
 Route.group(() => {
+  Route.get('addresses', 'AddressController.index').as('client.address.index')
   Route.post('addresses', 'AddressController.store').as('client.address.post')
     .validator('Address')
 })

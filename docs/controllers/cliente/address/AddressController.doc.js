@@ -1,6 +1,30 @@
 /**
  * @swagger
  * /v1/client/addresses:
+ *   get:
+ *     tags:
+ *       - Endereços
+ *     name: Lisgatem de todos os endereços do cliente
+ *     summary: Lisgatem de todos os endereços do cliente
+ *     description: Lisgatem de todos os endereços do cliente
+ *     security:
+ *       - bearerAuth: []
+ *     produces:
+ *       - application/json
+ *     consumes:
+ *       - application/json
+ *     responses:
+ *       '200':
+ *         description: retorna { data  }.
+ *       '400':
+ *         description: Não foi possível buscar seus endereços!
+ *       '500':
+ *         description: Problema no servidor.
+ */
+
+/**
+ * @swagger
+ * /v1/client/addresses:
  *   post:
  *     tags:
  *       - Endereços
@@ -36,14 +60,13 @@
  *               type: string
  *             long:
  *               type: string
-
  *         required:
  *           - lat
  *           - long
  *
  *     responses:
  *       '200':
- *         description: retorna { data : {} }.
+ *         description: retorna { data  }.
  *       '400':
  *         description: Não foi possível realizar sua avaliação!
  *       '500':
