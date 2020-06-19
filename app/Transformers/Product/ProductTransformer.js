@@ -26,8 +26,10 @@ class ProductTransformer extends BumblebeeTransformer {
       price: product.price,
       weight: product.weight,
       active_promotion: product.active_promotion,
+      price_promotion: product.price_promotion,
       technical_description: product.technical_description,
       type: product.type
+
     }
   }
 
