@@ -2,7 +2,7 @@
 
 const BumblebeeTransformer = use('Bumblebee/Transformer')
 const ImageTransformer = use('App/Transformers/Image/SimpleImageTransformer')
-const ProductDefaultTransformer = use('App/Transformers/Promotions/ProductDefaultTransformer')
+const SimpleProductDefaultTransformer = use('App/Transformers/Product/SimpleProductDefaultTransformer')
 const CompanyTransformer = use('App/Transformers/Promotions/CompanyTransformer')
 /**
  * PromotionTransformer class
@@ -43,7 +43,7 @@ class PromotionTransformer extends BumblebeeTransformer {
   }
 
   includeProductDefault (product) {
-    return this.item(product.getRelated('productDefault'), ProductDefaultTransformer)
+    return this.item(product.getRelated('productDefault'), SimpleProductDefaultTransformer)
   }
 
   includeCompany (product) {

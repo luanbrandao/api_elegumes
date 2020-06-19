@@ -43,8 +43,9 @@ class CompaniesSellProductsController {
         queryCompanies.where('name', 'ILIKE', `%${filter}%`)
       }
 
+      // seleciona o price_product apenas para ordenar a lista
       queryCompanies
-        .select('companies.*', 'products.price as price_product')
+        .select('companies.*', 'products.price as price_product', 'products.id as product_id')
         .where('products.active', true)
         .where('companies.active', true)
         // pega o valor do produto nessa loja
@@ -53,7 +54,7 @@ class CompaniesSellProductsController {
         .orderBy('price_product')
 
       const _companies = await queryCompanies.paginate(pagination.page, pagination.perpage)
-      const companies = await transform.paginate(_companies, CompanyTransformer)
+      const companies = await transform.include('product').paginate(_companies, CompanyTransformer)
 
       return response.status(200).json(companies)
     } catch (error) {

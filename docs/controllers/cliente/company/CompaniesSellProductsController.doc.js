@@ -1,6 +1,6 @@
 /**
  * @swagger
- * /v1/client/companies/sell/product/{id}:
+ * /v1/client/companies/sell/product_default/{id}:
  *   get:
  *     tags:
  *       - Empresa

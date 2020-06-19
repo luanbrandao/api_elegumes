@@ -18,7 +18,7 @@ test('retorna todas as lojas que vendem um determinado produto',
 
     const company = newCompany.toJSON()
 
-    const response = await client.get(`/v1/client/companies/sell/product/${company.id}`).end()
+    const response = await client.get(`/v1/client/companies/sell/product_default/${company.id}`).end()
     response.assertStatus(200)
     response.assertJSONSubset({
       pagination: { total: 0, perPage: 20, page: 1, lastPage: 0 }

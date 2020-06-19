@@ -39,7 +39,7 @@ Route.group(() => {
   .namespace('Client/Company')
 
 Route.group(() => {
-  Route.get('companies/sell/product/:id', 'CompaniesSellProductsController.index').as('client.company')
+  Route.get('companies/sell/product_default/:id', 'CompaniesSellProductsController.index').as('client.company')
 })
   .prefix('v1/client')
   .namespace('Client/Company')
