@@ -28,7 +28,7 @@ class DetailsCompanyTransformer extends BumblebeeTransformer {
       primary_phone: company.primary_phone,
       secundary_phone: company.secundary_phone,
       // falta fazer o cálculo das médias das avaliações
-      rating: company.rating | 0
+      rating: company.rating ? parseFloat(company.rating).toFixed(2) : 0
     }
   }
 

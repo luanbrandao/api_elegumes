@@ -27,7 +27,7 @@ class CompanyTransformer extends BumblebeeTransformer {
       name: company.name,
       owner: company.owner,
       // falta fazer o cálculo das médias das avaliações
-      rating: company.rating | 0
+      rating: company.rating ? parseFloat(company.rating).toFixed(2) : 0
     }
   }
 
