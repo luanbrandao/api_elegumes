@@ -38,6 +38,8 @@ Route.group(() => {
   Route.get('addresses', 'AddressController.index').as('client.address.index')
   Route.post('addresses', 'AddressController.store').as('client.address.post')
     .validator('Address')
+  Route.put('addresses/:id', 'AddressController.update').as('client.address.put')
+    .validator('Address')
 })
   .middleware('auth')
   .prefix('v1/client')

@@ -7,16 +7,18 @@ class Address {
 
   get rules () {
     return {
-      lat: 'required',
-      long: 'required'
+      lat: 'number',
+      long: 'number',
+      cep: 'number'
 
     }
   }
 
   get messages () {
     return {
-      'lat.required': 'A latitude é obrigatória!',
-      'long.required': 'A longitude é obrigatória!'
+      'lat.number': 'A latitude apenas com números',
+      'long.number': 'A longitude apenas com números',
+      'cep.number': 'Cep tem que er números'
     }
   }
 }
