@@ -81,7 +81,7 @@
  *       - Endereços
  *     name: Atualiza os dados do endereço do usuário
  *     summary: Atualiza os dados do endereço do usuário
- *     description: Cadastro de novo endereço do cliente
+ *     description: Atualiza os dados do endereço do usuário
  *     security:
  *       - bearerAuth: []
  *     produces:
@@ -126,6 +126,38 @@
  *         description: retorna { data  }.
  *       '400':
  *         description: Não foi possível realizar sua avaliação!
+ *       '500':
+ *         description: Problema no servidor.
+ */
+
+/**
+ * @swagger
+ * /v1/client/addresses/{id}:
+ *   delete:
+ *     tags:
+ *       - Endereços
+ *     name: Deleta o endereço do usuário
+ *     summary: Deleta o endereço do usuário
+ *     description: Deleta o endereço do usuário
+ *     security:
+ *       - bearerAuth: []
+ *     produces:
+ *       - application/json
+ *     consumes:
+ *       - application/json
+ *     parameters:
+ *       - name: id
+ *         in: path
+ *         type: string
+ *         required:
+ *         - id
+ *
+ *
+ *     responses:
+ *       '200':
+ *         description: retorna {}.
+ *       '400':
+ *         description: Não foi possível deletar o endereço!
  *       '500':
  *         description: Problema no servidor.
  */

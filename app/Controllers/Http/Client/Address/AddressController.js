@@ -45,7 +45,27 @@ class AddressController {
       // return response.send(await transform.item(category, Transformer))
     } catch (error) {
       return response.status(400).send({
-        message: error
+        message: 'Não foi possível atualizar o endereço!'
+      })
+    }
+  }
+
+  async delete ({ params: { id }, request, response, auth }) {
+    const client = await auth.getUser()
+
+    try {
+      const address = await client.addresses()
+        .where('id', id)
+        .delete()
+
+      if (!address) {
+        throw new Error()
+      }
+
+      return response.status(204).json()
+    } catch (error) {
+      return response.status(400).send({
+        message: 'Não foi possível deletar o endereço!'
       })
     }
   }

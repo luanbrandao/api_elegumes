@@ -40,6 +40,7 @@ Route.group(() => {
     .validator('Address')
   Route.put('addresses/:id', 'AddressController.update').as('client.address.put')
     .validator('Address')
+  Route.delete('addresses/:id', 'AddressController.delete').as('client.address.delete')
 })
   .middleware('auth')
   .prefix('v1/client')
